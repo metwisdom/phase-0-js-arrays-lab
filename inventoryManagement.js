@@ -9,7 +9,11 @@ function addProduct(productName) {
 }
 
 function removeLastProduct() {
-    products.pop();
+    if (products.length > 0) {
+        products.pop();
+    } else {
+        console.log("Error: Inventory is already empty.");
+    }
 }
 
 function updateProductName(index, newName) {
@@ -21,4 +25,5 @@ function updateProductName(index, newName) {
 }
 
 module.exports = { products, logFirstProduct, updateProductName, removeLastProduct, addProduct };
+
 
